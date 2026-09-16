@@ -1,6 +1,6 @@
 # Reviewer checklist - điền khi kiểm bài người khác
 
-Người gán: ______   Người kiểm: Nguyễn Hữu Huy   Ngày: 2026-09-16
+Người gán: Ngọc Hiếu   Người kiểm: Nguyễn Hữu Huy   Ngày: 2026-09-16
 
 Chạy trước khi soi bằng mắt:
 
@@ -25,7 +25,7 @@ bằng `tools/coco_kp_to_yolo_pose.py`. Kết quả `check_pose_labels.py`: 20/2
 | 7 | Export đúng **COCO Keypoints 1.0**: mảng `keypoints` có 51 số mỗi người | ☑ | |
 | 8 | Bản YOLO Pose: mỗi dòng 56 số, `kpt_shape: [17, 3]` | ☑ | `data.yaml`: `kpt_shape: [17, 3]` |
 | 9 | Visibility report đã nộp, và hai bảng đã được đặt cạnh nhau | ☑ | `reports/visibility_compare.md` |
-| 10 | Mọi ca không rõ đều được ghi trong `GUIDELINE_MINI.md` | ☐ | Chưa nhận được `GUIDELINE_MINI.md` của bạn cùng nhóm |
+| 10 | Mọi ca không rõ đều được ghi trong `GUIDELINE_MINI.md` | ☐ | Chưa đối chiếu được: chưa nhận `GUIDELINE_MINI.md` của Ngọc Hiếu |
 | 11 | `check_pose_labels.py` chạy 0 lỗi | ☑ | 0 lỗi, 5 cảnh báo |
 
 ## Lỗi tìm được

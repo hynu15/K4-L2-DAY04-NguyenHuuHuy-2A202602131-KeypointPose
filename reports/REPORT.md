@@ -1,6 +1,6 @@
 # Báo cáo Ngày 4 - Keypoint & Pose
 
-Họ tên: Nguyễn Hữu Huy   Nhóm: ______   Ngày: 2026-09-16
+Họ tên: Nguyễn Hữu Huy   Nhóm: 14   Ngày: 2026-09-16
 
 ## 1. Nhãn của tôi
 
@@ -12,7 +12,7 @@ Sau rework, `reports/visibility_report.md` được sinh lại: 20 ảnh, 29 ske
 | Số ảnh đã gán | 20 |
 | Số skeleton | 27 |
 | v=2 / v=1 / v=0 | 355 / 34 / 70 |
-| Thời gian trung bình mỗi ảnh | ______ |
+| Thời gian trung bình mỗi ảnh | 3 phút |
 
 Ba khớp có `%v=1` cao nhất (chép từ `reports/visibility_report.md`):
 
@@ -63,7 +63,7 @@ của người 1 và người 2 nằm chồng lên thân nhau - ảnh không kh�
 
 ## 3. Kiểm chéo
 
-Bạn cùng nhóm: ______
+Bạn cùng nhóm: Ngọc Hiếu
 
 Khớp lệch `%v=1` nhiều nhất giữa hai bảng đếm (`reports/visibility_compare.md`):
 

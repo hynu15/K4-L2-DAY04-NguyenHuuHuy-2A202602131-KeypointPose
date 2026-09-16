@@ -1,6 +1,6 @@
 # Review bài bạn cùng nhóm
 
-Người gán: ______   Người kiểm: Nguyễn Hữu Huy   Ngày: 2026-09-16
+Người gán: Ngọc Hiếu   Người kiểm: Nguyễn Hữu Huy   Ngày: 2026-09-16
 
 Bài được kiểm: `person_keypoints_default.json` (bản trước rework), export COCO Keypoints 1.0,
 chuyển sang YOLO Pose bằng `tools/coco_kp_to_yolo_pose.py`.
@@ -32,7 +32,7 @@ Kết quả nhanh: 20/20 file, 31 skeleton, `v=2` 419 | `v=1` 90 | `v=0` 18. 0 l
 | 7 | Export đúng **COCO Keypoints 1.0**: mảng `keypoints` có 51 số mỗi người | ☑ | |
 | 8 | Bản YOLO Pose: mỗi dòng 56 số, `kpt_shape: [17, 3]` | ☑ | |
 | 9 | Visibility report đã nộp, và hai bảng đã được đặt cạnh nhau | ☑ | `reports/visibility_compare.md` |
-| 10 | Mọi ca không rõ đều được ghi trong `GUIDELINE_MINI.md` | ☐ | Chưa nhận được `GUIDELINE_MINI.md` của bạn |
+| 10 | Mọi ca không rõ đều được ghi trong `GUIDELINE_MINI.md` | ☐ | Chưa đối chiếu được: chưa nhận `GUIDELINE_MINI.md` của Ngọc Hiếu |
 | 11 | `check_pose_labels.py` chạy 0 lỗi | ☑ | 0 lỗi, 5 cảnh báo |
 
 ## Lỗi tìm được

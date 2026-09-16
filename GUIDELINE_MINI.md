@@ -1,4 +1,4 @@
-# Mini guideline - nhóm: ______  |  người gán: Nguyễn Hữu Huy  |  ngày: 2026-09-16
+# Mini guideline - nhóm: 14  |  người gán: Nguyễn Hữu Huy  |  ngày: 2026-09-16
 
 > Điền file này **trong lúc** gán nhãn, không phải sau khi xong. Mỗi lần bạn dừng lại
 > hơn 10 giây để phân vân, đó là một dòng phải ghi vào đây.
