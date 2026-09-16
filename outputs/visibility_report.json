@@ -3,7 +3,7 @@
     "label_dir": "dataset/labels/train",
     "files": 20,
     "people": 29,
-    "mean_num_keypoints": 14.28,
+    "mean_num_keypoints": 14.24,
     "per_keypoint": [
       {
         "index": 0,
@@ -86,8 +86,8 @@
         "index": 11,
         "name": "left_hip",
         "v2_visible": 25,
-        "v1_occluded": 3,
-        "v0_outside": 1
+        "v1_occluded": 2,
+        "v0_outside": 2
       },
       {
         "index": 12,
@@ -127,8 +127,8 @@
     ],
     "totals": {
       "v2_visible": 379,
-      "v1_occluded": 35,
-      "v0_outside": 79
+      "v1_occluded": 34,
+      "v0_outside": 80
     }
   },
   "comparison": null

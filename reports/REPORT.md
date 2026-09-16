@@ -5,7 +5,7 @@ Họ tên: Nguyễn Hữu Huy   Nhóm: ______   Ngày: 2026-09-16
 ## 1. Nhãn của tôi
 
 Số liệu lấy từ `reports/visibility_report.md` tại bản khoá nhãn (commit `17a6bca`, trước rework).
-Sau rework, `reports/visibility_report.md` được sinh lại: 20 ảnh, 29 skeleton, v=2/v=1/v=0 = 379/35/79.
+Sau rework, `reports/visibility_report.md` được sinh lại: 20 ảnh, 29 skeleton, v=2/v=1/v=0 = 379/34/80.
 
 | Chỉ số | Giá trị |
 | --- | ---: |
@@ -47,7 +47,7 @@ Số liệu từ `outputs/eval_vs_gold_before_rework.json` (lần chấm đầu)
 
 - `train_13`: bổ sung skeleton đủ 17 điểm cho **2 người ở hậu cảnh** (người nhỏ bên trái và người áo vàng) - hết lỗi `thieu_nguoi`, số người ghép được từ 27 lên 29.
 - `train_04`, người bên phải (đội mũ bảo hiểm): chỉnh vị trí `right_elbow`, `right_wrist`, `right_hip`.
-- `train_04`, người bên trái: chỉnh `left_elbow`, `left_wrist` (đổi sang `v=1` vì cổ tay nằm sau tay lái), `left_hip`.
+- `train_04`, người bên trái: chỉnh `left_elbow`, `left_wrist` (đổi sang `v=1` vì cổ tay nằm sau tay lái); `left_hip` nằm ngoài mép dưới ảnh nên đặt `v=0` (`check_pose_labels.py` báo lỗi toạ độ ngoài ảnh).
 - `train_16`, người áo đỏ số 23: chỉnh `left_hip`, `left_knee`, `right_knee`, `left_ankle`, `right_ankle`, `left_wrist`, `right_elbow`.
 - `train_16`, người áo trắng: chỉnh `right_elbow`, `right_hip`, `left_ankle`.
 

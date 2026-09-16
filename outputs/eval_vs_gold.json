@@ -9,7 +9,7 @@
     "oks75": 0.9655,
     "findings": {
       "co_khac_gold": 44,
-      "gold_khong_gan_nhan": 30,
+      "gold_khong_gan_nhan": 29,
       "lech_nhe": 8,
       "xoa_khop_bi_che": 5,
       "thieu_khop": 3,
@@ -229,12 +229,6 @@
               "label": "Thiếu khớp gold có",
               "keypoint": "right_elbow",
               "detail": "Gold có v=2, bài của bạn v=0 nên khớp này tính 0 điểm. Gán lại với v=1 và đặt chấm ở vị trí ước lượng."
-            },
-            {
-              "type": "gold_khong_gan_nhan",
-              "label": "Gold không gán khớp này",
-              "keypoint": "left_hip",
-              "detail": "Không bị trừ điểm: khớp gold có v=0 bị loại khỏi OKS. Xem mục lưu ý trong README."
             }
           ]
         },
