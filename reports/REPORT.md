@@ -88,13 +88,17 @@ Luật mới đã bổ sung vào `GUIDELINE_MINI.md` sau khi thống nhất:
 <!-- Chép số từ outputs/eval_model.json sau Chặng 6. “Chênh” = sau fine-tune trừ baseline;
 đây là quan sát trên tập test, không phải chất lượng sản phẩm. -->
 
+Số liệu từ `outputs/eval_model.json` (Colab GPU, `yolo26n-pose.pt`, 80 epoch, `imgsz=640`, `fliplr=0.5`,
+đánh giá trên 10 ảnh / 13 người của `dataset/images/test`).
+
 | Chỉ số | yolo26n-pose gốc | Sau fine-tune | Chênh |
 | --- | ---: | ---: | ---: |
-| pose_mAP50 | | | |
-| pose_mAP50-95 | | | |
-| pose_precision | | | |
-| pose_recall | | | |
-| box_mAP50-95 | | | |
+| pose_mAP50 | 0.845 | 0.845 | 0.0 |
+| pose_mAP50-95 | 0.6853 | 0.6908 | +0.0055 |
+| pose_precision | 0.9734 | 0.9792 | +0.0058 |
+| pose_recall | 0.8462 | 0.8462 | 0.0 |
+| box_mAP50 | 0.9785 | 0.96 | -0.0185 |
+| box_mAP50-95 | 0.8119 | 0.8041 | -0.0078 |
 
 ### Trả lời năm câu hỏi ở cuối notebook
 
@@ -104,8 +108,25 @@ Luật mới đã bổ sung vào `GUIDELINE_MINI.md` sau khi thống nhất:
 1. `pose_mAP50-95` thay đổi bao nhiêu? Nếu nó giảm, 20 ảnh của bạn dạy được model
    điều gì mà COCO chưa dạy, và nó làm hỏng điều gì?
 
+   `pose_mAP50-95` tăng rất nhẹ từ 0.6853 lên 0.6908 (**+0.0055**); `pose_mAP50` và `pose_recall`
+   giữ nguyên (0.845 và 0.8462). Recall 0.8462 = 11/13 người test ở cả hai model, nên fine-tune
+   không giúp tìm thêm người nào - nó chỉ làm chấm của những người đã tìm được sát hơn một chút ở
+   ngưỡng OKS chặt (0.75-0.95), và precision tăng +0.0058. Với 20 ảnh, 29 skeleton, mức chênh này
+   quá nhỏ để coi là cải thiện thật: một người test đổi trạng thái đúng/sai đã làm các số này dao động
+   lớn hơn thế. Cái giá phải trả nằm ở phần box: `box_mAP50` giảm -0.0185 và `box_mAP50-95` giảm
+   -0.0078. Giải thích khả dĩ: box trong nhãn của tôi do CVAT sinh ra từ các điểm skeleton đã đặt,
+   nên thường hẹp hơn box COCO (bao cả tóc, giày, quần áo); fine-tune kéo model về phía box hẹp đó,
+   làm lệch nhẹ so với box của tập test.
+
 2. `box_mAP` và `pose_mAP` chênh nhau bao nhiêu? Model tìm *người* dễ hơn hay tìm
    *khớp* dễ hơn? Vì sao?
+
+   Sau fine-tune, `box_mAP50-95` - `pose_mAP50-95` = 0.8041 - 0.6908 = **0.1133**; ở mức 0.50 là
+   0.96 - 0.845 = 0.115. Model gốc cũng chênh tương tự (0.8119 - 0.6853 = 0.1266). Model tìm
+   **người** dễ hơn tìm **khớp**: một box đúng chỉ cần bao được thân người, còn OKS đòi 17 điểm
+   cùng nằm trong bán kính dung sai, mà dung sai của mắt/mũi/tai chỉ vài pixel. Thêm nữa, khớp bị che
+   (`v=1`) không có bề mặt nhìn thấy, vị trí chỉ là ước lượng - chính những khớp khiến tôi và bạn cùng
+   nhóm bất đồng nhiều nhất (`left_ear` 4% vs 35% `v=1`) cũng là chỗ model khó đoán nhất.
 
 3. Một ảnh test model đoán sai - gọi tên lỗi theo bốn loại của slide 43
    (lệch nhẹ / đảo trái/phải / nhầm người / trượt hẳn):
